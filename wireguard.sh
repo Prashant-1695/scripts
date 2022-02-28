@@ -33,10 +33,10 @@ if [ "${VERSION}" == "${CURRENT_VERSION}" ]; then
                 rm -rf "${KERNEL_DIR}""/net/wireguard"
                 mkdir "${KERNEL_DIR}/net/wireguard"
                 tar -C "${KERNEL_DIR}/net/wireguard" -xf wireguard-linux-compat-"${VERSION}".tar.xz --strip-components=2 "wireguard-linux-compat-${VERSION}/src"
-cd "${KERNEL_DIRgit add net/wireguard/*
+cd "${KERNEL_DIR}" git add net/wireguard/*
                 git commit :-s -m "Merge tag 'v${VERSION}' of ${WIREGUARD_URL}"
 while read -r distro package version _; do
 
                 VERSION="$version"
                 break
-rm -rf wireguard-linux-compat-"${VERSION}".tar.xz       
+rm -rf wireguard-linux-compat-"${VERSION}".tar.xz
